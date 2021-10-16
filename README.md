@@ -14,4 +14,6 @@
  -  DatabaseName: backend-test
  -  Server: Aws, Docker
  
- 
+## How To Use
+ -  Import file BACKEND-TEST-ANDIHOERUDIN.postman_collection.json in postman 
+  
