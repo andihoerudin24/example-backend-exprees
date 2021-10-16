@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "b7a84dd4-46bb-4503-924d-99ce9d032a7a",
+		"name": "BACKEND-TEST-ANDIHOERUDIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"andih234@gmail.com\",\n    \"password\":\"andihoerudin\",\n    \"name\":\"andih234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"andih234@gmail.com\",\n    \"password\":\"andihoerudin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create-Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGloMjM0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjYxNmFiOGEwZTY2MDkwMDU3OTA1NzFhOSIsImlhdCI6MTYzNDM4NDc3NSwiZXhwIjoxNjM0Mzg4Mzc1fQ.dA90IUAMbuBi-9YBgAgjfDjSSJwj5jWx8onxdspYEV8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/andihoerudin/Downloads/sertifikat.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "sertifikat vaksin",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "example content",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/feed/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feed",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGloMjM0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjYxNmFiOGEwZTY2MDkwMDU3OTA1NzFhOSIsImlhdCI6MTYzNDM4NDc3NSwiZXhwIjoxNjM0Mzg4Mzc1fQ.dA90IUAMbuBi-9YBgAgjfDjSSJwj5jWx8onxdspYEV8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feed/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feed",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Single-Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGloMjM0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjYxNmFiOGEwZTY2MDkwMDU3OTA1NzFhOSIsImlhdCI6MTYzNDM4NDc3NSwiZXhwIjoxNjM0Mzg4Mzc1fQ.dA90IUAMbuBi-9YBgAgjfDjSSJwj5jWx8onxdspYEV8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feed/posts/616abb9c5d48260712031ad9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feed",
+						"posts",
+						"616abb9c5d48260712031ad9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGloMjM0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjYxNmFiOGEwZTY2MDkwMDU3OTA1NzFhOSIsImlhdCI6MTYzNDM4NDc3NSwiZXhwIjoxNjM0Mzg4Mzc1fQ.dA90IUAMbuBi-9YBgAgjfDjSSJwj5jWx8onxdspYEV8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/andihoerudin/Downloads/sertifikat.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "edit title",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "rdit content",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/feed/posts/616abb9c5d48260712031ad9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feed",
+						"posts",
+						"616abb9c5d48260712031ad9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGloMjM0QGdtYWlsLmNvbSIsInVzZXJJZCI6IjYxNmFiOGEwZTY2MDkwMDU3OTA1NzFhOSIsImlhdCI6MTYzNDM4NDc3NSwiZXhwIjoxNjM0Mzg4Mzc1fQ.dA90IUAMbuBi-9YBgAgjfDjSSJwj5jWx8onxdspYEV8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/feed/posts/616abb9c5d48260712031ad9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feed",
+						"posts",
+						"616abb9c5d48260712031ad9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
